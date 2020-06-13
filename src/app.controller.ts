@@ -1,12 +1,17 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from '@services';
+import { Controller, Get, Query } from '@nestjs/common';
+import { FooService } from '@services';
+import { GetFooListRequestDTO, TGetFooListRequestDTO } from '@dto';
+import { IoValidationPipe } from '@libs';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly fooService: FooService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Get('/get-foo-list')
+  getFooList(
+    @Query(new IoValidationPipe(GetFooListRequestDTO))
+    request: TGetFooListRequestDTO,
+  ) {
+    return this.fooService.find(request);
   }
 }

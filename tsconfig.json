@@ -15,9 +15,12 @@
     "strict": true,
     "paths": {
       "@app/*": ["src/*"],
+      "@dto": ["src/dto/index"],
       "@libs": ["src/libs/index"],
-      "@modules": ["src/modules/index"],
-      "@services": ["src/services/index"]
+      "@config": ["src/config/index"],
+      "@entities": ["src/entities/index"],
+      "@services": ["src/services/index"],
+      "@repositories": ["src/repositories/index"]
     }
   },
   "exclude": ["node_modules", "dist"]

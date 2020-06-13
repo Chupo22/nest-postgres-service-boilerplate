@@ -16,6 +16,12 @@ FROM node:12.16.1-alpine
 ARG HOST
 ARG PORT
 
+ARG POSTGRES_HOST
+ARG POSTGRES_PORT
+ARG POSTGRES_USER
+ARG POSTGRES_PASSWORD
+ARG POSTGRES_DB
+
 COPY --from=builder /dist /dist
 COPY --from=builder /node_modules /node_modules
 

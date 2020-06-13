@@ -1,1 +1,1 @@
-export { AppService } from './app.service';
+export { FooService } from './foo.service';
